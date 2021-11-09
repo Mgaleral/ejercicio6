@@ -1,28 +1,17 @@
 # Media, mediana y varianza
 
-num1 = float(input("Escribe el número 1: "))
-num2 = float(input("Escribe el número 2: "))
-num3 = float(input("Escribe el número 3: "))
+import statistics
 
-lista = [num1, num2, num3]
-def mean(datos):
-    return sum(datos) / len(datos)
+n1 = int(input("Introduzca el primer dato numérico: "))
+n2 = int(input("Introduzca el segundo dato numérico: "))
+n3 = int(input("Introduzca el tercer dato numérico: "))
 
-print("Media de la lista: ", mean(lista))
+n = [n1, n2, n3]
 
-def median(data):
-    data = sorted(data)
-    n = len(data)
-    if n == 0:
-        raise StadisticsError("no median for empty data")
-    if n % 2 == 1:
-        return data[n // 2]
-    else:
-        i = n // 2
-        return (data[i - 1] + data[i]) / 2
+media = statistics.mean(n)
+mediana = statistics.median(n)
+varianza = statistics.variance(n)
 
-print("Mediana: ", median(lista))
-
-import numpy
-varianza = numpy.var(lista)
+print("Media: ", media)
+print("Mediana: ", mediana)
 print("Varianza: ", varianza)
